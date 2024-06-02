@@ -3,8 +3,11 @@ import React from "react";
 
 import { Button } from "@/components/ui/button";
 import LocalSearchBar from "@/components/shared/search/LocalSearchBar";
+import Filter from "@/components/shared/Filter";
+import { HomePageFilters } from "@/constants/filters";
+import HomeFilters from "@/components/home/HomeFilters";
 
-const Home = () => {
+const Home = (): React.JSX.Element => {
   return (
     <>
       <div className="flex w-full flex-col-reverse justify-between gap-4 sm:flex-row sm:items-center">
@@ -23,8 +26,14 @@ const Home = () => {
           placeholder="Search for questions"
           otherClasses="flex-1"
         />
-        Filters
+        <Filter
+          filters={HomePageFilters}
+          otherClasses="min-h-[56px] sm:min-w-[170px]"
+          containerClasses="hidden max-md:flex"
+        />
       </div>
+
+      <HomeFilters />
     </>
   );
 };
