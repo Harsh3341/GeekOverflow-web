@@ -5,19 +5,19 @@ import RenderTag from "./RenderTag";
 
 const RightSidebar = () => {
   const hotQuestions = [
-    { _id: 1, title: "How to create a new project in Netxjs?" },
-    { _id: 2, title: "How to create a new project in Netxjs?" },
-    { _id: 3, title: "How to create a new project in Netxjs?" },
-    { _id: 4, title: "How to create a new project in Netxjs?" },
-    { _id: 5, title: "How to create a new project in Netxjs?" },
+    { _id: "1", title: "How to create a new project in Netxjs?" },
+    { _id: "2", title: "How to create a new project in Netxjs?" },
+    { _id: "3", title: "How to create a new project in Netxjs?" },
+    { _id: "4", title: "How to create a new project in Netxjs?" },
+    { _id: "5", title: "How to create a new project in Netxjs?" },
   ];
 
   const popularTages = [
-    { _id: 1, name: "React", totalQuestions: 5 },
-    { _id: 2, name: "Nextjs", totalQuestions: 2 },
-    { _id: 3, name: "Nodejs", totalQuestions: 4 },
-    { _id: 4, name: "Javascript", totalQuestions: 1 },
-    { _id: 5, name: "Typescript", totalQuestions: 7 },
+    { _id: "1", name: "React", totalQuestions: 5 },
+    { _id: "2", name: "Nextjs", totalQuestions: 2 },
+    { _id: "3", name: "Nodejs", totalQuestions: 4 },
+    { _id: "4", name: "Javascript", totalQuestions: 1 },
+    { _id: "5", name: "Typescript", totalQuestions: 7 },
   ];
 
   return (

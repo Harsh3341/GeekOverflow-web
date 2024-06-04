@@ -6,6 +6,45 @@ import LocalSearchBar from "@/components/shared/search/LocalSearchBar";
 import Filter from "@/components/shared/Filter";
 import { HomePageFilters } from "@/constants/filters";
 import HomeFilters from "@/components/home/HomeFilters";
+import NoResult from "@/components/shared/NoResult";
+import QuestionCard from "@/components/cards/QuestionCard";
+
+const questions = [
+  {
+    _id: "1",
+    title: "How to use Tailwind CSS in a Nextjs Project?",
+    tags: [
+      { _id: "1", name: "Tailwind" },
+      { _id: "2", name: "CSS" },
+    ],
+    author: {
+      _id: "1",
+      name: "Harsh Gupta",
+      picture: "harsh.png",
+    },
+    upvotes: 1000,
+    views: 10000000,
+    answers: [],
+    createdAt: new Date("2024-06-03T12:00:00.000Z"),
+  },
+  {
+    _id: "2",
+    title: "What are the common linux commands",
+    tags: [
+      { _id: "1", name: "Linux" },
+      { _id: "2", name: "Ubuntu" },
+    ],
+    author: {
+      _id: "1",
+      name: "Harsh Gupta",
+      picture: "harsh.png",
+    },
+    upvotes: 10,
+    views: 100,
+    answers: [],
+    createdAt: new Date("2024-06-03T12:00:00.000Z"),
+  },
+];
 
 const Home = (): React.JSX.Element => {
   return (
@@ -34,6 +73,31 @@ const Home = (): React.JSX.Element => {
       </div>
 
       <HomeFilters />
+
+      <div className="mt-10 flex w-full flex-col gap-6">
+        {questions.length > 0 ? (
+          questions.map((question) => (
+            <QuestionCard
+              key={question._id}
+              _id={question._id}
+              title={question.title}
+              tags={question.tags}
+              author={question.author}
+              upvotes={question.upvotes}
+              views={question.views}
+              answers={question.answers}
+              createdAt={question.createdAt}
+            />
+          ))
+        ) : (
+          <NoResult
+            title="There's no question to show"
+            description="Be the first to break the silence! Ask a Question and kickstart the discussion. Our query could be the next big thing others learn from. Get involved!"
+            link="/ask-question"
+            linkTitle="Ask a Question"
+          />
+        )}
+      </div>
     </>
   );
 };
